@@ -17,6 +17,15 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+Route::get('/login', function () {
+    return view('Auth.login');
+});
+
+Route::get('/register', function () {
+    return view('Auth.register');
+});
+
+
 Route::get('dataArray', function () {
     $programs = ['php', 'java', 'c', 'javascript', 'dart'];
     return view('dataArray',['programs' => $programs]);
@@ -26,7 +35,11 @@ Route::get('zoomSesi2', function () {
     return view('zoomSesi2');
 });
 Route::get('/', function () {
-    return view('template');
+    return view('index');
+});
+
+Route::get('/index', function () {
+    return view('index');
 });
 
 Route::get('/table', function () {

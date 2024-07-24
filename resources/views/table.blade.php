@@ -1,4 +1,4 @@
-@extends('template')
+@extends('template.template')
 @section('main')
 <h1 class="h3 mb-0 text-gray-800">Halaman Table</h1>
 <table class="table">
