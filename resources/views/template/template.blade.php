@@ -241,6 +241,7 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+                    @include('flashMessage.flashMessage')
                     @yield('main')
                 </div>
                 <!-- /.container-fluid -->
