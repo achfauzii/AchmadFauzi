@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Siswa extends Model
 {
@@ -16,4 +17,8 @@ class Siswa extends Model
     // ];
 
     protected $guarded = ['id','timestamps'];
+
+    function sekolah() {
+        return $this->belongsTo(sekolah::class);
+    }
 }

@@ -4,6 +4,7 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,7 +40,7 @@ Route::get('zoomSesi2', function () {
     return view('zoomSesi2');
 });
 Route::get('/', function () {
-    return view('index');
+    return view('welcome');
 });
 
 Route::get('/index', function () {
@@ -51,7 +52,10 @@ Route::get('/table', function () {
     return view('table',['data'=>$data]);
 });
 
-Route::resource('siswa', SiswaController::class);
-Route::resource('user', UserController::class);
+Route::resource('siswa', SiswaController::class)->middleware(['auth','admin']);
+Route::resource('user', UserController::class)->middleware(['auth','admin']);
 Route::resource('posts', PostsController::class);
 Route::resource('comment', CommentController::class);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);

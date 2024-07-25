@@ -9,6 +9,7 @@
         <th scope="col">Nis</th>
         <th scope="col">Nama</th>
         <th scope="col">Alamat</th>
+        <th scope="col">Sekolah</th>
         <th scope="col">Action</th>
       </tr>
     </thead>
@@ -19,6 +20,7 @@
             <td>{{$siswa -> nis}}</td>
             <td>{{$siswa -> nama}}</td>
             <td>{{$siswa -> alamat}}</td>
+            <td>{{$siswa -> sekolah -> nama_sekolah}}</td>
             <td class ="d-flex">
                 <a href="{{route('siswa.edit',$siswa->id)}}" class="btn btn-sm btn-warning">Edit</a>
                 <form action="{{ route('siswa.destroy', $siswa->id) }}" method="POST">
