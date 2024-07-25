@@ -19,6 +19,24 @@
             <span>Dashboard</span></a>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('user.index')}}">
+            <i class="fas fa-fw fa-users"></i>
+            <span>User</span></a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('posts.index')}}">
+            <i class="fas fa-fw fa-blog"></i>
+            <span>Posts</span></a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('comment.index')}}">
+            <i class="fas fa-fw fa-comments"></i>
+            <span>Comment</span></a>
+    </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider">
 
