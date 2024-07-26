@@ -52,8 +52,12 @@ Route::get('/table', function () {
     return view('table',['data'=>$data]);
 });
 
+//Implementasi middleware pada route
+//Route dengan middleware hanya dengan role admin yang dapat mengakses
 Route::resource('siswa', SiswaController::class)->middleware(['auth','admin']);
 Route::resource('user', UserController::class)->middleware(['auth','admin']);
+
+
 Route::resource('posts', PostsController::class);
 Route::resource('comment', CommentController::class);
 Auth::routes();

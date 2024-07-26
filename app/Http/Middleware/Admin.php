@@ -16,6 +16,7 @@ class Admin
      */
     public function handle(Request $request, Closure $next): Response
     {
+        //Middleware pengecekan user dengan role sebagai admin
         if (Auth::user()->role == 'admin') {
             return $next($request);
         }else{

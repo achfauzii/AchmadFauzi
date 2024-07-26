@@ -16,12 +16,14 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
-
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+    //Method Controller setelah login dan pengecekan, jika sebagai admin akan diarahkan ke dalam halaman siswa
+    //Selain admin di arahkan ke halaman home
     public function index()
     {
         if(Auth::user()->role == 'admin'){
