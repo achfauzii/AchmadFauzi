@@ -3,6 +3,7 @@
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\UploadController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -57,6 +58,7 @@ Route::get('/table', function () {
 Route::resource('siswa', SiswaController::class)->middleware(['auth','admin']);
 Route::resource('user', UserController::class)->middleware(['auth','admin']);
 
+Route::resource('upload', UploadController::class);
 
 Route::resource('posts', PostsController::class);
 Route::resource('comment', CommentController::class);

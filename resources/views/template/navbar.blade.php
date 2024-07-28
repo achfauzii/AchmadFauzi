@@ -32,6 +32,12 @@
     </li>
 
     <li class="nav-item">
+        <a class="nav-link" href="{{route('upload.index')}}">
+            <i class="fas fa-fw fa-blog"></i>
+            <span>Upload</span></a>
+    </li>
+
+    <li class="nav-item">
         <a class="nav-link" href="{{route('comment.index')}}">
             <i class="fas fa-fw fa-comments"></i>
             <span>Comment</span></a>
